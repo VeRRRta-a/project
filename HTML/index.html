@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habbit App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Styles/main.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="panel">
+        <img class="logo" src="/image/Лого.svg" alt="Логотип" />
+        <nav class="menu">
+          <!-- динамичное добавление кнопок JS -->
+          <div class="menu__list" id="act_buttons"></div>
+          <button class="menu__add">
+            <img src="/image/Add.svg" alt="Добавить привычку" />
+          </button>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="page-content" id="sport" style="display: none">
+          <header>
+            <h1>Отжимания</h1>
+            <div class="progress">
+              <div class="progress__text">
+                <div class="progress__name">Прогресс</div>
+                <div class="progress__percent">50%</div>
+              </div>
+              <div class="progress__bar">
+                <div class="progress__cover-bar"></div>
+              </div>
+            </div>
+          </header>
+
+          <main>
+            <div class="sport">
+                <div class="sport__day">Прогресс</div>
+                <form class="sport__form">
+                  <input
+                    class="input_icon"
+                    type="number"
+                    min="0"
+                    placeholder="Укажите максимальное количество дней для прогресса"
+                  />
+                  <img
+                    class="input_icon_img"
+                    src="/image/comment.svg"
+                    alt="Иконка комментария"
+                  />
+                </form>
+              </div>
+            <!-- Динамичные комментарии по дням и кнопка создания комментария -->
+            <div id="sport_list"></div>
+            <div class="sport">
+              <div class="sport__day" id="sport_day_id">День 1</div>
+              <form class="sport__form" id="sport_from_id" data-item-id="1">
+                <input
+                  class="input_icon"
+                  type="text"
+                  placeholder="Комментарий"
+                />
+                <img
+                  class="input_icon_img"
+                  src="/image/comment.svg"
+                  alt="Иконка комментария"
+                />
+                <button type="submit" class="button add_comment">Готово</button>
+              </form>
+            </div>
+          </main>
+        </div>
+        <div class="page-content" id="water" style="display: none">
+          <p>water</p>
+        </div>
+        <div class="page-content" id="food" style="display: none">
+          <p>food</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="/Scripts/app.js"></script>
+    <script src="/Scripts/habbit-sport.js"></script>
+  </body>
+</html>
